@@ -19,6 +19,16 @@ li {
   margin: 5px;
   justify-content: space-between;
 }
+li>div:first-of-type
+{
+        list-style-type: none;
+        display: flex;
+        width: 500px;
+        margin: 0px;
+        background-color: rgb(146, 146, 211);
+        margin: 5px;
+        justify-content: space-between;
+}
 li:hover {
   background-color: rgb(194, 194, 194);
 }

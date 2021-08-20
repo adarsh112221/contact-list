@@ -17,8 +17,15 @@
         <ul>
           <%for(let i of contact_list){%>
           <li>
+            <div>
             <p><%=i.name%></p>
             <p><%=i.phone%></p>
+          </div>
+            <div>	
+              <a href="/delete-contact/?phone=<%=i.phone%>">
+              <i class="fas fa-times" style="padding: 4px;"></i>
+            </a>
+            </div>
           </li>
           <%}%>
         </ul>
