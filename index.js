@@ -56,14 +56,17 @@ app.get("/practice", function (req, res) {
 });
 
 app.get("/delete-contact", function (req, res) {
-  console.log(req.query);
-  let phone = req.query.phone;
-  let contactIndex = contactList.findIndex((contact) => contact.phone == phone);
+  //get the id from url
+  let id = req.query.id;
 
-  if (contactIndex != -1) {
-    contactList.splice(contactIndex, 1);
-  }
-  return res.redirect("back");
+  //find the contact using database using id and delete it
+  Contact.findByIdAndDelete(id, function (err) {
+    if (err) {
+      console.log("error in deleting a object from data base");
+      return;
+    }
+    return res.redirect("back");
+  });
 });
 
 app.post("/create-contact", function (req, res) {
