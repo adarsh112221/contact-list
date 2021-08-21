@@ -1,5 +1,5 @@
 const mongoose=require('mongoose');
-const contactschema=new mongoose.Schema({
+const contactSchema=new mongoose.Schema({
 
     name:{
         type:String,
@@ -7,6 +7,7 @@ const contactschema=new mongoose.Schema({
     },
     phone:{
         type:String,
+        required:true
 
     }
 
